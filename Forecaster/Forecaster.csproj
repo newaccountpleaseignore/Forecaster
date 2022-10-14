@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1AB20E8-A9B7-41E1-A9AD-E22528B81BA8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Forecaster</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <ApplicationVersion>0.5.1.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.IWshRuntimeLibrary">
+      <HintPath>lib\Interop.IWshRuntimeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DrawingArea.cs" />
+    <Compile Include="HeaderPanel.cs" />
+    <Compile Include="System\Windows\Forms\TaskButton.cs" />
+    <Compile Include="System\Windows\Forms\PageIndicator.cs" />
+    <Compile Include="System\Windows\Forms\OnPageChangedArgs.cs" />
+    <Compile Include="System\Windows\Forms\HintTextBox.cs" />
+    <Compile Include="WeatherAPI\Weather.cs" />
+    <Compile Include="WeatherAPI\Conditions.cs" />
+    <Compile Include="Forecaster\SelectLocation.cs" />
+    <Compile Include="Forecaster\PremiumForm.cs" />
+    <Compile Include="Forecaster\Forecast.cs" />
+    <Compile Include="Forecaster\Settings.cs" />
+    <Compile Include="Forecaster\Progress.cs" />
+    <Compile Include="Forecaster\LabelDivider.cs" />
+    <Compile Include="Forecaster\Taskbar.cs" />
+    <Compile Include="Forecaster\TaskbarPosition.cs" />
+    <Compile Include="Forecaster\ABM.cs" />
+    <Compile Include="Forecaster\ABE.cs" />
+    <Compile Include="Forecaster\ABS.cs" />
+    <Compile Include="Forecaster\Shell32.cs" />
+    <Compile Include="Forecaster\User32.cs" />
+    <Compile Include="Forecaster\APPBARDATA.cs" />
+    <Compile Include="Forecaster\RECT.cs" />
+    <Compile Include="Forecaster\Program.cs" />
+    <Compile Include="Forecaster\Language.cs" />
+    <Compile Include="Forecaster\AddLocation.cs" />
+    <Compile Include="Forecaster\BasicForm.cs" />
+    <Compile Include="Forecaster\StartupUtil.cs" />
+    <Compile Include="Forecaster\Helper.cs" />
+    <Compile Include="Forecaster\DebugLog.cs" />
+    <Compile Include="Forecaster\Properties\Settings.cs" />
+    <Compile Include="Forecaster\Properties\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forecaster\AddLocation.resx" />
+    <EmbeddedResource Include="Forecaster\BasicForm.resx" />
+    <EmbeddedResource Include="Forecaster\LabelDivider.resx" />
+    <EmbeddedResource Include="Forecaster\PremiumForm.resx" />
+    <EmbeddedResource Include="Forecaster\Progress.resx" />
+    <EmbeddedResource Include="Forecaster\Properties\Resources.resx" />
+    <EmbeddedResource Include="Forecaster\SelectLocation.resx" />
+    <EmbeddedResource Include="Forecaster\Settings.resx" />
+    <EmbeddedResource Include="System\Windows\Forms\PageIndicator.resx" />
+    <EmbeddedResource Include="System\Windows\Forms\TaskButton.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
